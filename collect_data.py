@@ -13,13 +13,11 @@ COLORS = ["green", "red", "yellow"]
 SAMPLES_PER_COLOR = 100  
 
 def setup_folders():
-    """Creates the dataset/ directory and color subfolders automatically"""
     base_dir = "dataset"
     for color in COLORS:
         folder_path = os.path.join(base_dir, color)
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
-            print(f"Created folder: {folder_path}")
     return base_dir
 
 def main():
@@ -35,9 +33,6 @@ def main():
         
     time.sleep(2)  
     
-    print("\n=== ESP32 Audio Dataset Collector ===")
-    print("Instructions: When prompted, say the color loudly and clearly into the mic.")
-    print("The ESP32 will auto-detect your voice and send the 1-second sample.")
     input("\nPress Enter to start collecting data...")
 
     for color in COLORS:
@@ -81,7 +76,6 @@ def main():
                     print(f"Error during audio packet capture: {e}")
                     time.sleep(1)
 
-    print("\n Data Collection Complete! Your folders are full and ready for training.")
     ser.close()
 
 if __name__ == "__main__":
