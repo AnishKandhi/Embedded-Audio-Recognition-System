@@ -22,8 +22,7 @@ def main():
         input_names=['input'],     
         output_names=['output'],   
         
-        # THIS IS THE EXACT FIX: Completely blocks the generation of 
-        # external data references and forces everything into the file shell.
+      
         use_external_data_format=False
     )
     
