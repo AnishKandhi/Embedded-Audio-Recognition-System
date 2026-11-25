@@ -1,4 +1,4 @@
-# Embedded-Audio-Recognition-System
+# Embedded-AI-Audio-Recognition-System (Voice-Controlled Smart Deadbolt)
 
 DEMO: https://drive.google.com/file/d/1e3vEYJ5D1QH07Ml6g5Neii-dZMY4p2-y/view?usp=sharing
 
