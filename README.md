@@ -27,7 +27,7 @@ My project built a **voice-controlled smart lock** based on an **embedded audio 
 3. Quantize the model's parameters to 8 bit (int8) via the EON compiler so it can fit on the small ESP32, and benchmark accuracy, SRAM usage, and inference speed.
 4. Link the C++ TFLite library (with all the weights) to the firmware code so the model can run inference offline.
 
-After training and retraining the model with different samples (until it achieved **95%** accuracy in validation and performed well in live inference), I exported the file to a **.onnx** and used Edge Impulse to quantize the model's weights to **8-bit** (so it can fit on the small ESP32) and deploy it onto the ESP32 to run inference on the controller. Accuracy degraded slightly by **4** percentage points to **91%** (as expected, the weights aren't as precise), but SRAM use and inference speed improved drastically from the 32-bit model. 
+After training and retraining the model with different samples (until it achieved **95%** accuracy in validation and performed well in live inference), I exported the file to a **.onnx** and used Edge Impulse to quantize the model's weights to **8-bit** (so it can fit on the small ESP32) and deploy it onto the ESP32 to run inference on the controller. Accuracy degraded slightly by **4** percentage points to **91%** (as expected, the weights aren't as precise), but SRAM use and inference speed improved by 25% from the 32-bit model. 
 
 Since the model now lived on the ESP32, I wrote the Fourier Transform C++ code directly in the firmware to process the audio samples picked up by the I2S Mic, because my model did not have access to the Python Libraries on my computer anymore (since it runs inference on the ESP32). 
 
